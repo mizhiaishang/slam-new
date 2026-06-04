@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hregnet"
+version = "0.1.0"
+description = "HRegNet: A Hierarchical Network for Large-scale Outdoor LiDAR Point Cloud Registration"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {file = "LICENSE"}
+
+[tool.setuptools.packages.find]
+include = ["hregnet*"]
+
+[tool.black]
+line-length = 110

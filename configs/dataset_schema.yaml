@@ -1,0 +1,24 @@
+required:
+  zed_svo2: zed/zed.svo2
+  zed_svo_index: zed/zed_svo_index.csv
+  rear_rgb_dir: rear_camera/rgb
+  lidar_scan_dir: lidar/scans
+
+optional:
+  rear_frames: rear_camera/frames.csv
+  rear_calibration: rear_camera/calibration.json
+  front_frames: front_camera/frames.csv
+  existing_front_rgb_dir: front_camera/rgb
+  existing_depth_dir: depth
+  existing_alignment: sync/alignment.csv
+
+zed_svo_index_columns:
+  - frame_id
+  - jetson_timestamp_ns
+  - zed_image_timestamp_ns
+  - recorded_frame_index
+
+notes:
+  - SVO2 provides front-view RGB, front-view depth, camera intrinsics, cuVSLAM poses, and cuVSLAM sparse point cloud.
+  - zed_svo_index.csv bridges ZED image timestamps and external Jetson timestamps.
+  - Rear images and LiDAR are external auxiliary inputs and are matched by Jetson timestamps.

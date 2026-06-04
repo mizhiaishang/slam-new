@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools",]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pointmamba"
+version = "0.1.0"
+description = "PointMamba: A Simple State Space Model for Point Cloud Analysis"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+
+[tool.setuptools.packages.find]
+include = ["pointmamba*"]

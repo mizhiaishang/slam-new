@@ -1,0 +1,96 @@
+# Python cache and build artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Runtime outputs
+outputs/*
+!outputs/.gitkeep
+*.log
+logs/
+tmp/
+temp/
+
+# Generated media and visualization exports outside outputs
+*.rrd
+*.ply
+*.pcd
+*.las
+*.laz
+*.svo
+*.svo2
+*.mp4
+*.avi
+*.mov
+
+# Large binary assets
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+*.onnx
+*.engine
+*.bin
+*.weights
+*.so
+*.so.*
+*.a
+*.o
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.7z
+*.rar
+
+# Known large files in this portable package.
+# Keep them on disk locally, but do not commit them to GitHub directly.
+/models/sam/sam_vit_b_01ec64.pth
+/models/depth/depth_anything_v2_metric_vkitti_vits.pth
+/models/opr/multi-image_lidar_late-fusion_itlp-finetune.pth
+/third_party/OpenPlaceRecognition/third_party/Depth-Anything-V2/weights/depth_anything_v2_metric_vkitti_vits.pth
+/third_party/OpenPlaceRecognition/third_party/Depth-Anything-V2/metric_depth/dataset/splits/hypersim/train.txt
+/third_party/OpenPlaceRecognition/third_party/Depth-Anything-V2/assets/teaser.png
+/third_party/OpenPlaceRecognition/third_party/AdelaiDepth/examples/2.gif
+/third_party/OpenPlaceRecognition/third_party/AdelaiDepth/examples/3.gif
+/runtime/zed_sdk/lib/libsl_zed.so
+/runtime/zed_sdk/lib/libsl_ai.so
+
+# Local datasets and ad-hoc runs at repository root
+/dataset*/
+/data/
+/runs/
+/run_outputs/
+/debug_runs/
+/debug*/
+
+# IDE and OS noise
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Local secrets and environment files
+.env
+.env.*
+!.env.example
+
+# Source, configs, scripts, docs, and lightweight metadata should remain trackable.
+# Heavy model/runtime assets should be distributed separately or via Git LFS.

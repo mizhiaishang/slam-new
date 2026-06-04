@@ -1,0 +1,14 @@
+numpy
+pandas
+opencv-python
+scipy
+pyyaml
+tqdm
+networkx
+plotly
+ultralytics
+segment-anything
+rerun-sdk
+omegaconf
+torch
+torchvision

@@ -1,0 +1,78 @@
+project:
+  name: semantic_topomap_portable
+
+models:
+  yolo_weights: models/yolo/best.pt
+  sam_checkpoint: models/sam/sam_vit_b_01ec64.pth
+  sam_model_type: vit_b
+  opr_config: models/opr/multi-image_lidar_late-fusion.yaml
+  opr_weights: models/opr/multi-image_lidar_late-fusion_itlp-finetune.pth
+  depth_weights: models/depth/depth_anything_v2_metric_vkitti_vits.pth
+
+third_party:
+  object3d_engine_root: third_party
+  nav_graph_root: third_party/nav_tools
+  opr_root: third_party/OpenPlaceRecognition
+  depth_anything_root: third_party/OpenPlaceRecognition/third_party/Depth-Anything-V2
+  cuvslam_scripts: semantic_topomap/cuvslam
+
+runtime:
+  device: cpu
+  yolo_device: null
+  sam_device: null
+  max_frames: -1
+  require_rear: true
+  require_lidar: true
+  require_zed_index: true
+  prefer_svo2_depth: true
+  coordinate_axis_map: zed_to_code
+
+object3d:
+  min_consecutive_frames: 2
+  overlap_filter_enabled: true
+  overlap_iou_threshold: 0.05
+  overlap_min_ratio_threshold: 0.35
+  motion_filter_enabled: true
+  motion_filter_classes: person
+  motion_unknown_filter_enabled: true
+  motion_min_consecutive_observations: 2
+  motion_static_max_center_span_m: 1.0
+  motion_static_max_median_step_m: 0.35
+  motion_static_max_single_step_m: 1.2
+  disappearance_filter_enabled: true
+  disappearance_max_observation_distance_m: 3.0
+  disappearance_position_tolerance_m: 1.0
+  disappearance_match_distance_m: 1.0
+  disappearance_min_visible_misses: 2
+  disappearance_fov_margin_deg: 8.0
+
+waypoint:
+  sampling_enabled: true
+  min_distance_m: 0.8
+  min_yaw_deg: 25.0
+  keep_first_last: true
+  keep_topology_change: true
+
+topology:
+  feature_distance_threshold: 1.8
+  coord_distance_threshold: 2.5
+  new_node_distance_threshold: 2.7
+  hfov: 91.0
+  vfov: 65.0
+
+rerun:
+  image_width: 640
+  cloud_points: 0
+  grow_pointcloud: true
+  max_growing_cloud_points: 100000
+  include_removed: true
+  show_hierarchy: true
+  black_background: true
+  object_label_mode: none
+  hierarchy_label_color_mode: bright
+  cloud_color: "40,230,255"
+  cloud_radius: 0.0275
+  cloud_secondary_color: "255,255,255"
+  cloud_secondary_radius: 0.009
+  topology_z: 5.5
+  semantic_level_z_step: 2.6

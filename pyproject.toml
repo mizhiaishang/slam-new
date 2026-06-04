@@ -1,0 +1,12 @@
+[project]
+name = "semantic-topomap-portable"
+version = "0.1.0"
+description = "Portable multi-sensor semantic topological mapping pipeline"
+requires-python = ">=3.10"
+
+[project.scripts]
+semantic-topomap = "semantic_topomap.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["semantic_topomap*"]

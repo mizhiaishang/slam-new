@@ -1,0 +1,3 @@
+dataset: /home/zyf/Desktop/dataset_test3
+output: /home/zyf/Public/slam/outputs/dataset_test3
+config: /home/zyf/Public/slam/configs/default.yaml
